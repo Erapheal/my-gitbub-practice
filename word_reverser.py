@@ -1,7 +1,33 @@
-def reverse_words(sentence):
-    words = sentence.split()
-    reversed_words = words[::-1]
-    return " ".join(reversed_words)
+def calculate(num1, operator, num2):
+    if operator == '+':
+        return num1 + num2
+    elif operator == '-':
+        return num1 - num2
+    elif operator == '*':
+        return num1 * num2
+    elif operator == '/':
+        if num2 != 0:
+            return num1 / num2
+        else:
+            return "Error: Division by zero!"
+    else:
+        return "Invalid operator."
 
 
-print(reverse_words("Hello world"))
+def run_calculator():
+    print("Simple Calculator")
+    print("Available operations: +, -, *, /")
+    
+    try:
+        num1 = float(input("Enter first number: "))
+        operator = input("Enter operator (+, -, *, /): ")
+        num2 = float(input("Enter second number: "))
+        
+        result = calculate(num1, operator, num2)
+        print(f"Result: {result}")
+    except ValueError:
+        print("Invalid input. Please enter numeric values only.")
+
+
+if __name__ =="__main__":
+    run_calculator()
