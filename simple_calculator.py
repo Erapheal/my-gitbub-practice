@@ -1,4 +1,5 @@
 def calculate(num1, operator, num2):
+#conditional statement for the calculator
     if operator == '+':
         return num1 + num2
     elif operator == '-':
